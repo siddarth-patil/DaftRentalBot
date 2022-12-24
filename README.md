@@ -47,4 +47,4 @@ We welcome contributions to DaftRentalBot. If you have a bug fix or new feature 
 
 ## License
 
-DaftRentalBot is licensed under the [MIT License](https://github.com/siddarth-patil/daft_automation/blob/6fc05f2908f719292cffc0017543f5c92bebb6db/LICENSE).
+DaftRentalBot is licensed under the [Apache License 2.0](https://github.com/siddarth-patil/daft_automation/blob/6fc05f2908f719292cffc0017543f5c92bebb6db/LICENSE).

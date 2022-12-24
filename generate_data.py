@@ -8,8 +8,7 @@ def generateEndTime():
     MAX_HOURS = os.environ.get('maxHours')
     MAX_MINUTES = os.environ.get('maxMinutes')
 
-    # end_time = time.time() + 60 * MAX_MINUTES * MAX_HOURS
-    end_time = time.time() + 60 * 3
+    end_time = time.time() + 60 * MAX_MINUTES * MAX_HOURS
     print("Running it for: ", MAX_HOURS, " hours.")
     return end_time
 
@@ -21,6 +20,5 @@ def generateFilterLink():
     CITY_NAME = os.environ.get('cityName')
 
     link = f"https://www.daft.ie/property-for-rent/ireland?rentalPrice_to={MAX_PRICE}&numBeds_from={MIN_BED}&numBeds_to={MAX_BED}&numBaths_from={MIN_BATH}&sort=publishDateDesc&location={CITY_NAME}&location={CITY_NAME}-city"
-    print("Generated Link is: ", link)
     return link
         
