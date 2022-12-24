@@ -4,28 +4,25 @@ DaftRentalBot is an open source Python project that automates the process of app
 
 ## Features
 
-- Search for rental properties on daft.ie based on location, price range, and number of bedrooms
-- Filter search results by property type (e.g. apartment, house, studio)
+- Search for rental properties on daft.ie based on location, price range, number of bathrooms, and number of bedrooms. All the properties should be stored in `.env` file in root directory.
 - Apply to rental properties with a customizable application message
-- Save and manage multiple application templates
-- Specify search filters in the `.env` file, including "Maximum Price", "Minimum no. of beds", "Maximum no. of beds", "minimum no. of bathrooms", and "City Name"
 - Keep a log of applied houses in the `logger.csv` file, including "Rent", "Address of the house", "Daft link to the house", and "Application status"
 
 ## Requirements
 
 DaftRentalBot requires the following packages:
 
-- Python 3.6 or higher
+- [Python 3.7 or higher](https://www.python.org/downloads/)
 - [Selenium](https://pypi.org/project/selenium/)
-- [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/) (if using Chrome browser)
+- [Chrome Browser](https://www.google.com/intl/en_ie/chrome/)
 
 ## Installation
 
 To install DaftRentalBot, clone the repository and install the required packages:
 
 ```bash
-git clone https://github.com/<username>/daftrentalbot.git
-cd daftrentalbot
+git clone https://github.com/siddarth-patil/DaftRentalBot
+cd DaftRentalBot
 pip install -r requirements.txt
 ```
 

@@ -8,7 +8,7 @@ def generateEndTime():
     MAX_HOURS = os.environ.get('maxHours')
     MAX_MINUTES = os.environ.get('maxMinutes')
 
-    end_time = time.time() + 60 * MAX_MINUTES * MAX_HOURS
+    end_time = time.time() + 60 * 60 * MAX_HOURS
     print("Running it for: ", MAX_HOURS, " hours.")
     return end_time
 
