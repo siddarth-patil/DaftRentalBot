@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-To use DaftRentalBot, you will need to have a Daft account and provide your login credentials in the config.ini file. You will also need to specify your search filters in the .env file.
+To use DaftRentalBot, you will need to have a Daft account and provide your login credentials in the `.env` file. You will also need to specify your search filters in the `.env` file.
 
 To start the bot, run the following command:
 
@@ -36,11 +36,16 @@ To start the bot, run the following command:
 python main.py
 ```
 
-The bot will search for rental properties on daft.ie based on the specified filters and display the results. You can filter the results by property type and select which properties to apply to. A log of applied houses will be kept in the logger.csv file.
+The bot will search for rental properties on daft.ie based on the specified filters and apply for the places automatically. A log of applied houses will be kept in the `logger.csv` file. Logs of the running script will also be printed on the terminal.
 
 ## Contributing
 
 We welcome contributions to DaftRentalBot. If you have a bug fix or new feature that you would like to contribute, please open a pull request.
+
+## Upcoming Features/Bug Fixes
+
+- Add a filter to support Pet Friendly, Smoking friendly, etc. houses.
+- Write tests to check for the valid inputs from the user. 
 
 ## License
 
