@@ -1,16 +1,16 @@
+import csv
+import os
+import time
 from time import sleep
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 
 from dotenv import load_dotenv
-import os
-import csv
-import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
-from generate_data import generateFilterLink
-from generate_data import generateEndTime
+from generate_data import generate_end_time
+from generate_data import generate_filter_link
 
 
 class SetUp:
@@ -65,11 +65,11 @@ class Apply(SetUp):
     def apply(self):
         self.login()
         self.applied_url = None
-        self.link = generateFilterLink()
+        self.link = generate_filter_link()
         self.applicationProcess()
 
         # Run automation for this interval of time
-        end_time = generateEndTime()
+        end_time = generate_end_time()
 
         while time.time() < end_time:
             self.driver.get(self.link)
