@@ -1,4 +1,8 @@
-[![HitCount](https://hits.dwyl.com/siddarth-patil/repo/DaftRentalBot.svg?style=flat-square)](http://hits.dwyl.com/siddarth-patil/repo/DaftRentalBot)
+<p align="center">
+    <a href="http://hits.dwyl.com/siddarth-patil/repo/DaftRentalBot"><img src="https://hits.dwyl.com/siddarth-patil/repo/DaftRentalBot.svg?style=flat-square" alt="HitCount"></a>
+    <a href="https://ko-fi.com/P5P5HAOTL"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi"></a>
+    <a href='https://github.com/MShawon/github-clone-count-badge'><img alt='GitHub Clones' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/siddarth-patil/51a993d18f4c3d624dd5c11473ef64c2/raw/clone.json&logo=github'></a>
+</p>
 
 # DaftRentalBot
 
