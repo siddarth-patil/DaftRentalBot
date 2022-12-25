@@ -1,20 +1,22 @@
+[![HitCount](https://hits.dwyl.com/siddarth-patil/repo/DaftRentalBot.svg?style=flat-square)](http://hits.dwyl.com/siddarth-patil/repo/DaftRentalBot)
+
 # DaftRentalBot
 
 DaftRentalBot is an open source Python project that automates the process of applying for rental places on [daft.ie](https://www.daft.ie/).
 
 ## Features
 
-- Search for rental properties on daft.ie based on location, price range, number of bathrooms, and number of bedrooms. All the properties should be stored in `.env` file in root directory.
-- Apply to rental properties with a customizable application message
-- Keep a log of applied houses in the `logger.csv` file, including "Rent", "Address of the house", "Daft link to the house", and "Application status"
+-   Search for rental properties on daft.ie based on location, price range, number of bathrooms, and number of bedrooms. All the properties should be stored in `.env` file in root directory.
+-   Apply to rental properties with a customizable application message
+-   Keep a log of applied houses in the `logger.csv` file, including "Rent", "Address of the house", "Daft link to the house", and "Application status"
 
 ## Requirements
 
 DaftRentalBot requires the following packages:
 
-- [Python 3.7 or higher](https://www.python.org/downloads/)
-- [Selenium](https://pypi.org/project/selenium/)
-- [Chrome Browser](https://www.google.com/intl/en_ie/chrome/)
+-   [Python 3.7 or higher](https://www.python.org/downloads/)
+-   [Selenium](https://pypi.org/project/selenium/)
+-   [Chrome Browser](https://www.google.com/intl/en_ie/chrome/)
 
 ## Installation
 
@@ -44,8 +46,8 @@ We welcome contributions to DaftRentalBot. If you have a bug fix or new feature 
 
 ## Upcoming Features/Bug Fixes
 
-- Add a filter to support Pet Friendly, Smoking friendly, etc. houses.
-- Write tests to check for the valid inputs from the user. 
+-   Add a filter to support Pet Friendly, Smoking friendly, etc. houses.
+-   Write tests to check for the valid inputs from the user.
 
 ## License
 
