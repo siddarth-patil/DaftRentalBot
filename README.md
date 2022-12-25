@@ -39,7 +39,7 @@ To use DaftRentalBot, you will need to have a Daft account and provide your logi
 To start the bot, run the following command:
 
 ```bash
-python main.py
+python src/main.py
 ```
 
 The bot will search for rental properties on daft.ie based on the specified filters and apply for the places automatically. A log of applied houses will be kept in the `logger.csv` file. Logs of the running script will also be printed on the terminal.
