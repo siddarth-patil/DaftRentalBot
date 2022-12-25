@@ -9,8 +9,8 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+from generate_data import GenerateLink
 from generate_data import generate_end_time
-from generate_data import generate_filter_link
 
 
 class SetUp:
@@ -65,7 +65,8 @@ class Apply(SetUp):
     def apply(self):
         self.login()
         self.applied_url = None
-        self.link = generate_filter_link()
+        generate_link = GenerateLink()
+        self.link = generate_link.generate_filter_link()
         self.applicationProcess()
 
         # Run automation for this interval of time
