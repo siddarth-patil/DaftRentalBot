@@ -97,17 +97,19 @@ class Apply(SetUp):
             # Click on close feedback if exists
             self.driver.find_element(By.XPATH, '//*[@id="wootric-close"]').click()
         except:
-            pass
+            print("Feedback form had popped up! I took care of it.")
 
     def applicationProcess(self):
         self.driver.get(self.link)
         sleep(3)
+        self.checkFeedback()
 
         # Click the latest ad on the page.
         self.latest_ad = self.driver.find_element(
             By.XPATH,
             '//*[@id="__next"]/main/div[3]/div[1]/ul/li[1]/a/div/div[1]/div[2]',
         ).click()
+        self.checkFeedback()
 
         sleep(3)
         self.applied_url = self.driver.current_url
@@ -130,24 +132,30 @@ class Apply(SetUp):
             '//*[@id="__next"]/main/div[3]/div[2]/div/div[1]/div[2]/div[2]/button',
         ).click()
         sleep(3)
+        self.checkFeedback()
         # Enter First Name
         self.driver.find_element(By.XPATH, '//*[@id="keyword1"]').send_keys(
             self.SECRET_NAME
         )
+        self.checkFeedback()
         # Enter Email-ID
         self.driver.find_element(By.XPATH, '//*[@id="keyword2"]').send_keys(
             self.SECRET_ID
         )
+        self.checkFeedback()
         # Enter Contact Number
         self.driver.find_element(By.XPATH, '//*[@id="keyword3"]').send_keys(
             self.SECRET_CONTACT
         )
+        self.checkFeedback()
         # Enter Application text
         self.driver.find_element(By.XPATH, '//*[@id="message"]').send_keys(
             self.SECRET_MESSAGE
         )
 
-        sleep(10)
+        self.checkFeedback()
+
+        sleep(5)
 
         # Send the applicaiton
         self.driver.find_element(
@@ -162,6 +170,8 @@ class Apply(SetUp):
             By.XPATH, '//*[@id="contact-form-modal"]/div[1]/button'
         ).click()
 
+        self.checkFeedback()
+
         try:
             # Check if already applied
             text = self.driver.find_element(
@@ -172,8 +182,8 @@ class Apply(SetUp):
         except:
             self.writer.writerow(log_entry)
             print("Applied for a house!")
-        # Wait 30 seconds till you apply for the next one
-        sleep(30)
+        # Wait 10 seconds till you apply for the next one
+        sleep(10)
 
 
 run = Apply()
