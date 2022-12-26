@@ -10,7 +10,8 @@ DaftRentalBot is an open source Python project that automates the process of app
 
 ## Features
 
--   Search for rental properties on daft.ie based on location, price range, number of bathrooms, and number of bedrooms. All the properties should be stored in `.env` file in root directory.
+-   Search for rental properties on daft.ie based on location, price range, number of bathrooms, number of bedrooms, and facilities. All the properties should be stored in `.env` file in root directory. All available options for each filter can be found [here.](available_filters.md)
+-   Takes default values for each filter if not specified.
 -   Apply to rental properties with a customizable application message
 -   Keep a log of applied houses in the `logger.csv` file, including "Rent", "Address of the house", "Daft link to the house", and "Application status"
 
