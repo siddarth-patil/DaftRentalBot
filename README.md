@@ -6,11 +6,13 @@
 
 # DaftRentalBot
 
-DaftRentalBot is an open source Python project that automates the process of applying for rental places on [daft.ie](https://www.daft.ie/).
+DaftRentalBot is an open source Python project that automates the process of applying for rental places on [daft.ie](https://www.daft.ie/) by scrapping latest ads every 30 seconds and applying for houses if not already.
 
 ## Features
 
 -   Search for rental properties on daft.ie based on location, price range, number of bathrooms, number of bedrooms, and facilities. All the properties should be stored in `.env` file (template can be found [here](.env)) in root directory. All available options for each filter can be found [here.](available_filters.md)
+-   Auto refreshes after every ~30 seconds to help you never miss the latest ads.
+-   Can set no. of hours for which you want this bot to run.
 -   Takes default values for each filter if not specified.
 -   Apply to rental properties with a customizable application message
 -   Keep a log of applied houses in the `logger.csv` file (example can be found [here](logger.csv)), including "Rent", "Address of the house", "Daft link to the house", and "Application status"
@@ -35,7 +37,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-To use DaftRentalBot, you will need to have a Daft account and provide your login credentials in the `.env` file. You will also need to specify your search filters in the `.env` file.
+To use DaftRentalBot, you will need to have a Daft account and provide your login credentials in the `.env` file. You will also need to specify your search filters in the `.env` file. You can do so by editing [this](.env) file.
 
 To start the bot, run the following command:
 
