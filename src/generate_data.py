@@ -37,7 +37,7 @@ class GenerateLink:
         self.price_filter_link()
         self.bed_filter_link()
         self.bath_filter_link()
-        self.pets_filter_link()
+        self.facilities_filter_link()
 
         print("Final link is: ", self.link)
         return self.link
@@ -65,17 +65,19 @@ class GenerateLink:
 
     def price_filter_link(self):
         try:
-            min_price = min(
-                available_price, key=lambda x: abs(x - os.environ.get("min_price"))
-            )
+            min_price = os.environ.get("min_price")
+            if isinstance(min_price, str):
+                min_price = int(min_price)
+            min_price = min(available_price, key=lambda x: abs(x - min_price))
         except NameError:
             print("min_price is missing therefore using minimum price default value.")
             min_price = min(available_price)
 
         try:
-            max_price = min(
-                available_price, key=lambda x: abs(x - os.environ.get("max_price"))
-            )
+            max_price = os.environ.get("max_price")
+            if isinstance(max_price, str):
+                max_price = int(max_price)
+            max_price = min(available_price, key=lambda x: abs(x - max_price))
         except NameError:
             print("max_price is missing therefore using maximum price default value.")
             max_price = max(available_price)
@@ -83,17 +85,19 @@ class GenerateLink:
 
     def bath_filter_link(self):
         try:
-            min_bed = min(
-                available_beds, key=lambda x: abs(x - os.environ.get("min_bed"))
-            )
+            min_bed = os.environ.get("min_bed")
+            if isinstance(min_bed, str):
+                min_bed = int(min_bed)
+            min_bed = min(available_beds, key=lambda x: abs(x - min_bed))
         except NameError:
             print("min_bed is missing therefore using minimum bed default value.")
             min_bed = min(available_beds)
 
         try:
-            max_bed = min(
-                available_beds, key=lambda x: abs(x - os.environ.get("max_bed"))
-            )
+            max_bed = os.environ.get("max_bed")
+            if isinstance(max_bed, str):
+                max_bed = int(max_bed)
+            max_bed = min(available_beds, key=lambda x: abs(x - max_bed))
         except NameError:
             print("max_bed is missing therefore using maximum bed default value.")
             max_bed = max(available_beds)
@@ -101,23 +105,25 @@ class GenerateLink:
 
     def bed_filter_link(self):
         try:
-            min_bath = min(
-                available_beds, key=lambda x: abs(x - os.environ.get("min_bath"))
-            )
+            min_bath = os.environ.get("min_bath")
+            if isinstance(min_bath, str):
+                min_bath = int(min_bath)
+            min_bath = min(available_beds, key=lambda x: abs(x - min_bath))
         except NameError:
             print("min_bath is missing therefore using minimum bath default value.")
             min_bath = min(available_bath)
 
         try:
-            max_bath = min(
-                available_beds, key=lambda x: abs(x - os.environ.get("max_bath"))
-            )
+            max_bath = os.environ.get("max_bath")
+            if isinstance(max_bath, str):
+                max_bath = int(max_bath)
+            max_bath = min(available_beds, key=lambda x: abs(x - max_bath))
         except NameError:
             print("max_bath is missing therefore using maximum bath default value.")
             max_bath = max(available_bath)
         self.link += f"&numBaths_from={min_bath}&numBaths_to={max_bath}"
 
-    def pets_filter_link(self):
+    def facilities_filter_link(self):
         try:
             facilities_name = os.environ.get("facilities")
             if not isinstance(facilities_name, list):
