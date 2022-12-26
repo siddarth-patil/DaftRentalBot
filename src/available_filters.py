@@ -1,3 +1,8 @@
+available_price = list(range(200, 2501, 100))
+available_price.extend(list(range(3000, 20001, 500)))
+available_beds = list(range(1, 16))
+available_bath = list(range(1, 6))
+
 available_cities = [
     "abbey-galway",
     "abbeydorney-kerry",

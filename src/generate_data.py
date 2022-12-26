@@ -3,7 +3,8 @@ import time
 
 from dotenv import load_dotenv
 
-from available_cities import available_cities
+from available_filters import *
+from exceptions import *
 
 load_dotenv(".env")
 
@@ -30,12 +31,6 @@ class GenerateLink:
     def __init__(self) -> None:
         # Base link on which filters will be added
         self.link = "https://www.daft.ie/property-for-rent/ireland"
-        self.available_price = list(range(200, 2501, 100))
-        self.available_price = self.available_price.extend(
-            list(range(3000, 20000, 500))
-        )
-        self.available_beds = list(range(1, 16))
-        self.available_bath = list(range(1, 6))
 
     def generate_filter_link(self):
         max_price = os.environ.get("max_price")
@@ -44,6 +39,7 @@ class GenerateLink:
         min_bath = os.environ.get("min_bath")
 
         self.city_filter_link()
+        self.price_filter_link()
 
         print("Final link is: ", self.link)
         return self.link
@@ -51,25 +47,24 @@ class GenerateLink:
     def city_filter_link(self):
         try:
             city_name = os.environ.get("city_name")
-            if not (
-                isinstance(city_name, list)
-                and all(isinstance(item, str) for item in city_name)
-            ):
-                print(
-                    "City Name should be a list and all items inside it should be string"
-                    # TODO: Raise Custom Expection and stop execution
-                )
-            elif not all(item in available_cities for item in city_name):
-                print("City name/s should be from the list provided")
-                # TODO: Raise Custom Expection and stop execution
-            elif len(city_name) == 1:
+            if not isinstance(city_name, list):
+                raise DaftRentalBotCityList
+            if not all(isinstance(item, str) for item in city_name):
+                raise DaftRentalBotCityStr
+            if not all(item in available_cities for item in city_name):
+                raise DaftRentalBotInvalidCity
+            if len(city_name) == 1:
                 self.link = f"https://www.daft.ie/property-for-rent/{city_name[0]}"
-                return self.link
             else:
                 self.link += "?"
                 for item in city_name:
                     self.link += f"location={item}&"
-                return self.link[:-1]
         except NameError:
-            # TODO: Raise custom Expection
+            print("Searching rental places for Ireland as no specific city provided.")
+            self.link = "https://www.daft.ie/property-for-rent/ireland"
+
+    def price_filter_link(self):
+        try:
+            pass
+        except:
             pass
