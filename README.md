@@ -49,12 +49,7 @@ pip install -r requirements.txt
 
 ## Contributing
 
-We welcome contributions to DaftRentalBot. If you have a bug fix or new feature that you would like to contribute, please open a pull request.
-
-## Upcoming Features/Bug Fixes
-
--   Add a filter to support Pet Friendly, Smoking friendly, etc. houses.
--   Write tests to check for the valid inputs from the user.
+We welcome contributions to DaftRentalBot. If you have a bug fix or new feature that you would like to contribute, please create a new issue or open a pull request.
 
 ## License
 
