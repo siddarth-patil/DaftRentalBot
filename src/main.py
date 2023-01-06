@@ -9,6 +9,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+from exceptions import DaftRentalBotLoginError
 from generate_data import GenerateLink
 from generate_data import generate_end_time
 
@@ -57,6 +58,12 @@ class SetUp:
         self.driver.find_element(
             By.XPATH, '//*[@id="kc-login-form"]/div[2]/input'
         ).click()
+
+        # Checking if error occured after login
+        if self.driver.find_element(By.XPATH, "/html/body/div/div/div[2]"):
+            raise DaftRentalBotLoginError(
+                "Incorrect username or password. Please try again."
+            )
 
         print("Logged in successfully!")
 
