@@ -20,3 +20,7 @@ class DaftRentalBotFacilitiesStr(Exception):
 
 class DaftRentalBotInvalidFacilities(Exception):
     """Each item inside facilities shold be a part of available_facilities"""
+
+
+class DaftRentalBotLoginError(Exception):
+    """Incorrect username or password. Please try again."""
